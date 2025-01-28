@@ -1,0 +1,183 @@
+.page {
+  min-height: 100svh;
+  background: #fffdf6;
+
+  --page-padding: 24px;
+  --page-main-background: rgb(251, 188, 5);
+  --page-main-gradient: linear-gradient(
+    rgba(251, 188, 5, 1) 0%,
+    rgba(248, 162, 25, 1) 50%,
+    rgba(244, 142, 34, 1) 100%
+  );
+
+  --page-opt1-background: rgb(0, 139, 225);
+  --page-opt1-gradient: linear-gradient(
+    130deg,
+    rgba(0, 139, 225, 1) 25%,
+    rgba(0, 76, 123, 1) 100%
+  );
+  --page-opt2-background: var(--page-main-background);
+  --page-opt2-gradient: var(--page-main-gradient);
+  --page-opt3-background: rgb(182, 79, 180);
+  --page-opt3-gradient: linear-gradient(
+    130deg,
+    rgba(182, 79, 180, 1) 0%,
+    rgba(248, 25, 95, 1) 50%,
+    rgba(246, 159, 67, 1) 100%
+  );
+  --page-opt4-background: rgb(57, 172, 66);
+  --page-opt4-gradient: linear-gradient(
+    130deg,
+    rgba(57, 172, 66, 1) 0%,
+    rgba(47, 115, 52, 1) 100%
+  );
+}
+
+.main {
+  text-align: center;
+}
+
+.background_container {
+  height: 180px;
+  overflow: hidden;
+}
+
+.background_image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.5);
+}
+
+.profile_container {
+  padding: 0 var(--page-padding);
+  margin-top: calc(var(--profile-image-size) / -2);
+  z-index: 100;
+  position: relative;
+
+  --profile-image-size: 156px;
+}
+.profile_image {
+  width: var(--profile-image-size);
+  height: var(--profile-image-size);
+  border-radius: 1000px;
+  padding: 8px;
+  background: var(--page-main-background);
+  background: var(--page-main-gradient);
+}
+
+.content {
+  padding: 0 var(--page-padding);
+}
+.subtitle,
+.title {
+  font-family: var(--font-lato), sans-serif;
+  display: block;
+}
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+}
+.subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 4px;
+  background: var(--page-main-background);
+  background: var(--page-main-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qrcode_container_btn {
+  --page-qrcode-background: var(--page-opt1-background);
+  --page-qrcode-gradient: var(--page-opt1-gradient);
+
+  color: #fff;
+  font-family: var(--font-lilita-one);
+  margin: calc(var(--page-padding) * 1) auto;
+  background: var(--page-qrcode-background);
+  background: var(--page-qrcode-gradient);
+  border-radius: 24px;
+  padding: 8px 16px;
+  border: 0;
+}
+.qrcode_container_btn.qrcode--contact {
+  --page-qrcode-background: var(--page-opt1-background);
+  --page-qrcode-gradient: var(--page-opt1-gradient);
+}
+.qrcode_container_btn.qrcode--email {
+  --page-qrcode-background: var(--page-opt2-background);
+  --page-qrcode-gradient: var(--page-opt2-gradient);
+}
+.qrcode_container_btn.qrcode--instagram {
+  --page-qrcode-background: var(--page-opt3-background);
+  --page-qrcode-gradient: var(--page-opt3-gradient);
+}
+.qrcode_container_btn.qrcode--whatsapp {
+  --page-qrcode-background: var(--page-opt4-background);
+  --page-qrcode-gradient: var(--page-opt4-gradient);
+}
+
+.qrcode_header {
+  padding: 0 8px 8px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.qrcode_title {
+  font-size: 18px;
+  text-shadow: 1px 1px 2px #00000070;
+}
+.qrcode_icon {
+  filter: drop-shadow(0 0 1px #00000030);
+}
+.qrcode_image {
+  padding: 16px;
+  background: #fff;
+  border-radius: 24px;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 400px;
+  gap: 16px;
+  margin: auto;
+}
+
+.buttons > .row {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+}
+.buttons button {
+  width: 100%;
+  border-radius: 8px;
+  padding: 8px;
+  color: #fff;
+  border: 0;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button.btn-contact {
+  background: var(--page-opt1-background);
+  background: var(--page-opt1-gradient);
+}
+.button.btn-email {
+  background: var(--page-opt2-background);
+  background: var(--page-opt2-gradient);
+}
+.button.btn-instagram {
+  background: var(--page-opt3-background);
+  background: var(--page-opt3-gradient);
+}
+.button.btn-whatsapp {
+  background: var(--page-opt4-background);
+  background: var(--page-opt4-gradient);
+}
